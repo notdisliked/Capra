@@ -27,19 +27,25 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+                        android:text="Galileo, the leaked hacking software from Hacker Team (defense contractor), contains code to insert child porn on a target's computer. This is how they get rid of people...."
                         android:elegantTextHeight="false"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:textIsSelectable="true"
                         android:textColor="@color/text_primary"
-                        android:paddingTop="8dp" />
+                        android:paddingTop="0dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:text="submitted 53 minutes ago by NotDisliked to NotDisliked (+2|-0)"
-                        android:id="@+id/textView2"
+                        android:textSize="12sp"
+                        android:text="1799 (+1823|-24) points and 489 comments"
+                        android:textColor="@color/text_secondary"
+                        android:paddingTop="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="submitted 53 minutes ago by NotDisliked to NotDisliked"
                         android:textColor="@color/text_secondary" />
                 </LinearLayout>
 
@@ -47,8 +53,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:id="@+id/imageView"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/uwotm8" />
+                    android:src="@drawable/uwotm8"
+                    android:layout_marginTop="8dp"/>
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
