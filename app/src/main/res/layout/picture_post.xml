@@ -37,14 +37,15 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         android:text="1799 (+1823|-24) points and 489 comments"
                         android:textColor="@color/text_secondary"
-                        android:paddingTop="8dp"/>
+                        android:paddingTop="6dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:layout_marginTop="6dp"
+                        android:textSize="9sp"
                         android:text="submitted 53 minutes ago by NotDisliked to NotDisliked"
                         android:textColor="@color/text_secondary" />
                 </LinearLayout>
