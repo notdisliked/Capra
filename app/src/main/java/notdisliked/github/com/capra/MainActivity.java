@@ -23,13 +23,16 @@ import org.json.JSONObject;
 
 
 public class MainActivity extends Activity {
+    APIHandler apiHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView postView = (ListView) findViewById(R.id.post_list);
-        ListAdapter postAdapter = new PostAdapter(this, R.layout.picture_post);
-        postView.setAdapter(postAdapter);
+         apiHandler = new APIHandler();
+//        ListAdapter postAdapter = new PostAdapter(this, R.layout.picture_post);
+//        postView.setAdapter(postAdapter);
     }
 
     @Override
@@ -59,41 +62,10 @@ public class MainActivity extends Activity {
     }
     public void openComments(View view){
 //        new CallAPI().execute("https://voat.co/api/frontpage");
-        new CallAPI().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw"); //Test, will remove
+        new APIHandler.CallAPI().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw"); //Test, will remove
     }
 
-    private class CallAPI extends AsyncTask<String, String, String> {
-        @Override
-        protected String doInBackground(String... params){
-            String urlString=params[0]; //Get URL
-            InputStream in = null; //
-            String jsonString = "";
-            try{
-                URL url = new URL(urlString); //
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setRequestMethod("GET");
-                urlConnection.setRequestProperty("Voat-ApiKey", "KGdCs0Paz/TNEQzsuucVyg==");
 
-                System.out.println(urlConnection.getResponseCode());
-                System.out.println(urlConnection.getResponseMessage());
-                in = new BufferedInputStream(urlConnection.getInputStream());
-//                String ins = IOUtils.toString(in, "UTF-8");
-                jsonString = new String(ByteStreams.toByteArray(in), Charsets.UTF_8);
-
-
-
-                System.out.println(in);
-            } catch (Exception e){
-                System.out.println(e.getMessage());
-                return e.getMessage();
-            }
-
-            return jsonString;
-        }
-        protected void onPostExecute(String result){
-
-        }
-    }
 
 //    JSONObject jsonObj = new JSONObject(jsonString);
 }
