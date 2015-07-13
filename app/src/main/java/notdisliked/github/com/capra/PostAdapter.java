@@ -8,7 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.joda.time.Instant;
+import org.joda.time.Interval;
+import org.joda.time.Period;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
@@ -48,10 +55,37 @@ public class PostAdapter extends ArrayAdapter<Post> {
                         postInfo.upVotes,
                         postInfo.downVotes,
                         postInfo.commentCount).toString());
-        
+
+        Instant date = new Instant().parse(postInfo.date);
+        Instant now = new Instant();
+        Interval diff = new Interval(date, now);
+        Period period = diff.toPeriod();
+        System.out.println(period.getSeconds());
+        String timeString;
+        if (period.getYears() == 0) {
+            if (period.getMonths() == 0) {
+                if (period.getDays() == 0) {
+                    if (period.getHours() == 0) {
+                        if (period.getMinutes() == 0) {
+                            timeString = period.getSeconds() + " second" + (period.getSeconds() == 1 ? "" : "s");
+                        } else {
+                            timeString = period.getMinutes() + " minute" + (period.getMinutes() == 1 ? "" : "s");
+                        }
+                    } else {
+                        timeString = period.getHours() + " hour" + (period.getHours() == 1 ? "" : "s");
+                    }
+                } else {
+                    timeString = period.getDays() + " day" + (period.getDays() == 1 ? "" : "s");
+                }
+            } else {
+                timeString = period.getMonths() + " month" + (period.getMonths() == 1 ? "" : "s");
+            }
+        } else {
+            timeString = period.getYears() + " year" + (period.getYears() == 1 ? "" : "s");
+        }
         ((TextView) postView.findViewById(R.id.post_info_2))
                 .setText(new Formatter(new StringBuilder(), Locale.US).format("%s ago by %s to %s",
-                        postInfo.date,
+                        timeString,
                         postInfo.userName,
                         postInfo.subverse).toString());
         return postView;
