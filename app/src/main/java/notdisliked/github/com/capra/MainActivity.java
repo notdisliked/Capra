@@ -29,8 +29,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ListView postView = (ListView) findViewById(R.id.post_list);
-         apiHandler = new APIHandler();
+        //ListView postView = (ListView) findViewById(R.id.post_list);
+        new APIHandler().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw");
 //        ListAdapter postAdapter = new PostAdapter(this, R.layout.picture_post);
 //        postView.setAdapter(postAdapter);
     }
@@ -62,8 +62,6 @@ public class MainActivity extends Activity {
     }
     public void openComments(View view){
 //        new CallAPI().execute("https://voat.co/api/frontpage");
-//        new APIHandler.CallAPI().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw"); //Test, will remove
-        new APIHandler().execute();
     }
 
 
