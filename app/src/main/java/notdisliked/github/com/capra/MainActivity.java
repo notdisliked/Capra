@@ -2,8 +2,17 @@ package notdisliked.github.com.capra;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import notdisliked.github.com.capra.Models.Post;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +21,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ListView postView = (ListView) findViewById(R.id.post_list);
+        ListAdapter postAdapter = new PostAdapter(this, R.layout.picture_post);
+        postView.setAdapter(postAdapter);
     }
 
     @Override
