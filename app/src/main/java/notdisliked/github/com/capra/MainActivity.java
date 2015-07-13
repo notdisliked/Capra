@@ -62,7 +62,8 @@ public class MainActivity extends Activity {
     }
     public void openComments(View view){
 //        new CallAPI().execute("https://voat.co/api/frontpage");
-        new APIHandler.CallAPI().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw"); //Test, will remove
+//        new APIHandler.CallAPI().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw"); //Test, will remove
+        new APIHandler().execute();
     }
 
 
