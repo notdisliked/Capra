@@ -29,6 +29,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:id="@+id/post_title"
                         android:text="Galileo, the leaked hacking software from Hacker Team (defense contractor), contains code to insert child porn on a target's computer. This is how they get rid of people...."
                         android:elegantTextHeight="false"
                         android:textSize="20sp"

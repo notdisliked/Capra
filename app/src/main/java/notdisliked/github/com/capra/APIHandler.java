@@ -69,7 +69,11 @@ public class APIHandler extends AsyncTask<String, String, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            posts.add(post);
             System.out.println(post.title);
+
         }
+        MainActivity.adapter.updatePosts(posts);
+
     }
 }

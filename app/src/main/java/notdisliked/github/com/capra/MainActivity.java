@@ -18,21 +18,24 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+
 import org.apache.commons.io.Charsets;
 import org.json.JSONObject;
 
 
 public class MainActivity extends Activity {
     APIHandler apiHandler;
+    public static PostAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //ListView postView = (ListView) findViewById(R.id.post_list);
+        ListView postView = (ListView) findViewById(R.id.post_list);
         new APIHandler().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw");
-//        ListAdapter postAdapter = new PostAdapter(this, R.layout.picture_post);
-//        postView.setAdapter(postAdapter);
+        adapter = new PostAdapter(this, new ArrayList<Post>());
+        postView.setAdapter(adapter);
     }
 
     @Override
