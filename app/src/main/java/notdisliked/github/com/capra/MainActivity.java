@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         ListView postView = (ListView) findViewById(R.id.post_list);
         adapter = new PostAdapter(this, new ArrayList<Post>());
         postView.setAdapter(adapter);
-        new APIHandler().execute("https://fakevout.azurewebsites.net/api/v1/v/nsfw");
+        new APIHandler().execute("https://fakevout.azurewebsites.net/api/v1/v/announcements");
     }
 
     @Override
